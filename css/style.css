@@ -1,0 +1,8 @@
+#content {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(0, -50%);
+  border: 5px solid #FFFF00;
+  padding: 10px;
+}
