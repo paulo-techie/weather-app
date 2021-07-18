@@ -31,7 +31,7 @@ input {
   background-color: rgb(223, 236, 236);
   border: rgb(223, 236, 236);
   margin: 5px;
-  margin-right: 0px;
+  margin-right: 0;
   width: 50%;
 }
 
@@ -54,7 +54,7 @@ input::placeholder {
   font-size: small;
 }
 
-img, 
+img,
 h2 {
   margin: 0;
 }
