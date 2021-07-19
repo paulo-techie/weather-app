@@ -1,4 +1,4 @@
-import loadWeather from "./weather-api";
+import loadCity from "./change-city";
 
 const displayData = (data) => {
   const main = document.getElementById('content');
@@ -37,7 +37,8 @@ const displayData = (data) => {
   form.appendChild(input);
   form.appendChild(button);
 
-  input.setAttribute('placeholder', 'Enter City');
+  form.setAttribute('id', 'input-form');
+  input.setAttribute('placeholder', 'Enter City ...');
   input.setAttribute('type', 'text');
   input.setAttribute('id', 'cityname');
   input.setAttribute('name', 'cityname');
@@ -52,7 +53,7 @@ const displayData = (data) => {
     let city = input.value;
     sectionDiv.style.display = "none";
     header.style.display = "none";
-    loadWeather(city);
+    loadCity(city);
   });
 
   const arr = Array.from(data.weather);
