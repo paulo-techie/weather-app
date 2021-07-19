@@ -47,21 +47,13 @@ const displayData = (data) => {
   label.innerText = 'Weather';
   button.innerText = 'Search';
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const city = input.value;
-    sectionDiv.style.display = 'none';
-    header.style.display = 'none';
-    loadCity(city);
-  });
-
   const arr = Array.from(data.weather);
   h2.innerText = arr[0].description;
   img.setAttribute('src', `http://openweathermap.org/img/wn/${arr[0].icon}@2x.png`);
   img.setAttribute('alt', arr[0].description);
   cityh4.innerText = data.name;
   countryh4.innerHTML = '<i class = "fas fa-map-marker-alt"></i>';
-  h3.innerHTML = `${Math.round( data.main.temp - 273.15 )} &#8451;`;// convert Kelvin to degrees celsius
+  h3.innerHTML = `${Math.round(data.main.temp - 273.15)} &#8451;`;// convert Kelvin to degrees celsius
   pT.innerHTML = '<i class = "fas fa-thermometer-full"></i>';
 };
 
