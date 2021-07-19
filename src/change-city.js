@@ -1,4 +1,4 @@
-import loadWeather from './weather-api'
+import loadWeather from './weather-api';
 
 const loadCity = (city) => loadWeather(city);
     

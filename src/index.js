@@ -1,3 +1,3 @@
-import currentWeatherLocation from './geo-api'
+import currentWeatherLocation from './geo-api';
 
 currentWeatherLocation();

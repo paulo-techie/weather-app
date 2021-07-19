@@ -6,7 +6,7 @@ function loadWeather(city) {
   fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`, { mode: 'cors' })
     .then(response => response.json())
     .then(data => displayData(data))
-    .catch(error => console.log(error));
+    .catch(error => error);
 }
 
 export default loadWeather;
