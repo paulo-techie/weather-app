@@ -65,7 +65,7 @@ const displayData = (data) => {
 
   const arr = Array.from(data.weather);
   h2.innerText = arr[0].description;
-  img.setAttribute('src', `http://openweathermap.org/img/wn/${arr[0].icon}@2x.png`);
+  img.setAttribute('src', `https://openweathermap.org/img/wn/${arr[0].icon}@2x.png`);
   img.setAttribute('alt', arr[0].description);
   cityh4.innerText = data.name;
   countryh4.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
@@ -77,17 +77,17 @@ const displayData = (data) => {
 
   selectBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const f = document.getElementById('fahrenheit');
-    const c = document.getElementById('celsius');
-    const switchTemp = document.getElementById('switch-temp');
-    if (f.style.display === 'none') {
-      f.style.display = 'block';
-      c.style.display = 'none';
-      switchTemp.innerText = 'Celsius';
+    // const f = document.getElementById('fahrenheit');
+    // const c = document.getElementById('celsius');
+    // const switchTemp = document.getElementById('switch-temp');
+    if (h3f.style.display === 'none') {
+      h3f.style.display = 'block';
+      h3c.style.display = 'none';
+      selectBtn.innerText = 'Celsius';
     } else {
-      f.style.display = 'none';
-      c.style.display = 'block';
-      switchTemp.innerText = 'Fahrenheit';
+      h3f.style.display = 'none';
+      h3c.style.display = 'block';
+      selectBtn.innerText = 'Fahrenheit';
     }
   });
 };
