@@ -17,7 +17,7 @@
 - Fontawesome
 
 
-## [Live demo](https://raw.githack.com/paulo-techie/weather-app/feature-weather/dist/index.html)
+## [Live demo](https://rawcdn.githack.com/paulo-techie/weather-app/1f978dea9e23d9fb1cf010128a90ac87009f06c2/dist/index.html)
 
 ### how to run locally
 
