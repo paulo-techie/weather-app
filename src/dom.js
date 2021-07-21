@@ -32,7 +32,7 @@ const displayData = (data) => {
   sectionTemp.appendChild(pT);
   sectionMain.appendChild(img);
   sectionMain.appendChild(h2);
-    
+  
   form.appendChild(label);
   form.appendChild(input);
   form.appendChild(button);
@@ -42,16 +42,18 @@ const displayData = (data) => {
   input.setAttribute('id', 'cityname');
   input.setAttribute('name', 'cityname');
   sectionMain.setAttribute('id', 'weatherdesc');
-  
+
   label.innerText = 'Weather';
   button.innerText = 'Search';
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let city = input.value;
+    const city = input.value;
     sectionDiv.style.display = 'none';
     header.style.display = 'none';
-    loadWeather(city);
+    loadWeather(city)
+      .then((data) => displayData(data))
+      .catch((error) => error);
   });
 
   const arr = Array.from(data.weather);
@@ -59,9 +61,9 @@ const displayData = (data) => {
   img.setAttribute('src', `http://openweathermap.org/img/wn/${arr[0].icon}@2x.png`);
   img.setAttribute('alt', arr[0].description);
   cityh4.innerText = data.name;
-  countryh4.innerHTML= '<i class="fas fa-map-marker-alt"></i>';
+  countryh4.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
   h3.innerHTML = `${Math.round(data.main.temp - 273.15)} &#8451;`; // convert Kelvin to degrees celsius
   pT.innerHTML = '<i class="fas fa-thermometer-full"></i>';
-}
+};
 
 export default displayData;

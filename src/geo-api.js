@@ -1,9 +1,9 @@
 import loadWeather from './weather-api';
 
 function currentWeatherLocation() {
-  fetch('https://freegeoip.app/json/', { mode: 'cors' })
+  return fetch('https://freegeoip.app/json/', { mode: 'cors' })
     .then((response) => response.json())
-    .then((data) => loadWeather(data.city))
+    .then((data) => data.city)
     .catch((error) => error);
 }
 
