@@ -1,4 +1,4 @@
-import loadWeather from "./weather-api";
+import loadWeather from './weather-api';
 
 const displayData = (data) => {
   const main = document.getElementById('content');
@@ -32,7 +32,7 @@ const displayData = (data) => {
   sectionTemp.appendChild(pT);
   sectionMain.appendChild(img);
   sectionMain.appendChild(h2);
-  
+
   form.appendChild(label);
   form.appendChild(input);
   form.appendChild(button);
