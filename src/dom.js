@@ -1,5 +1,3 @@
-import loadCity from './change-city';
-
 const displayData = (data) => {
   const main = document.getElementById('content');
   const header = document.createElement('header');
