@@ -77,9 +77,6 @@ const displayData = (data) => {
 
   selectBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    // const f = document.getElementById('fahrenheit');
-    // const c = document.getElementById('celsius');
-    // const switchTemp = document.getElementById('switch-temp');
     if (h3f.style.display === 'none') {
       h3f.style.display = 'block';
       h3c.style.display = 'none';
