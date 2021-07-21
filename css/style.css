@@ -24,7 +24,7 @@ button {
 
 div {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 input {
@@ -57,4 +57,10 @@ input::placeholder {
 img,
 h2 {
   margin: 0;
+}
+
+#switch-temp {
+  background-color: rgb(49, 34, 66);
+  box-shadow: slategray;
+  font-size: 65%;
 }

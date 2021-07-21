@@ -13,7 +13,9 @@ const displayData = (data) => {
   const label = document.createElement('label');
   const input = document.createElement('input');
   const button = document.createElement('button');
-  const h3 = document.createElement('h3');
+  const selectBtn = document.createElement('button');
+  const h3c = document.createElement('h3');
+  const h3f = document.createElement('h3');
   const pT = document.createElement('p');
   const cityh4 = document.createElement('h4');
   const countryh4 = document.createElement('h4');
@@ -28,7 +30,9 @@ const displayData = (data) => {
   header.appendChild(form);
   sectionLocation.appendChild(cityh4);
   sectionLocation.appendChild(countryh4);
-  sectionTemp.appendChild(h3);
+  sectionTemp.appendChild(selectBtn);
+  sectionTemp.appendChild(h3c);
+  sectionTemp.appendChild(h3f);
   sectionTemp.appendChild(pT);
   sectionMain.appendChild(img);
   sectionMain.appendChild(h2);
@@ -41,6 +45,9 @@ const displayData = (data) => {
   input.setAttribute('type', 'text');
   input.setAttribute('id', 'cityname');
   input.setAttribute('name', 'cityname');
+  h3f.setAttribute('id', 'fahrenheit');
+  h3c.setAttribute('id', 'celsius');
+  selectBtn.setAttribute('id', 'switch-temp');
   sectionMain.setAttribute('id', 'weatherdesc');
 
   label.innerText = 'Weather';
@@ -62,8 +69,27 @@ const displayData = (data) => {
   img.setAttribute('alt', arr[0].description);
   cityh4.innerText = data.name;
   countryh4.innerHTML = '<i class="fas fa-map-marker-alt"></i>';
-  h3.innerHTML = `${Math.round(data.main.temp - 273.15)} &#8451;`; // convert Kelvin to degrees celsius
+  selectBtn.innerText = 'Fahrenheit';
+  h3c.innerHTML = `${Math.round(data.main.temp - 273.15)} °C`; // convert Kelvin to degrees celsius
+  h3f.innerHTML = `${Math.round((data.main.temp - 273.15) * (9 / 5) + 32)} °F`; // convert Kelvin to degrees fahrenheit
   pT.innerHTML = '<i class="fas fa-thermometer-full"></i>';
+  h3f.style.display = 'none';
+
+  selectBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const f = document.getElementById('fahrenheit');
+    const c = document.getElementById('celsius');
+    const switchTemp = document.getElementById('switch-temp');
+    if (f.style.display === 'none') {
+      f.style.display = 'block';
+      c.style.display = 'none';
+      switchTemp.innerText = 'Celsius';
+    } else {
+      f.style.display = 'none';
+      c.style.display = 'block';
+      switchTemp.innerText = 'Fahrenheit';
+    }
+  });
 };
 
 export default displayData;
