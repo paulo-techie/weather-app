@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(215, 215, 228);
+}
+
+#content {
+  background-color: #34ade6;
+  color: cornsilk;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 30%;
+  left: 37.5%;
+  width: 25%;
+  transform: translate(0, -50%);
+  border: 5px solid #34ade6;
+  border-radius: 3%;
+  padding: 10px;
+}
+
+button {
+  background-color: #065174;
+  border: 0;
+  color: cornsilk;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  background-color: rgb(223, 236, 236);
+  border: rgb(223, 236, 236);
+  margin: 5px;
+  margin-right: 0;
+  width: 50%;
+}
+
+section {
+  text-align: center;
+  color: rgb(49, 34, 66);
+}
+
+label {
+  color: rgb(49, 34, 66);
+  font-size: large;
+}
+
+label::after {
+  content: ":";
+}
+
+input::placeholder {
+  background-color: rgb(223, 236, 236);
+  font-size: small;
+}
+
+img,
+h2 {
+  margin: 0;
+}
+
+#switch-temp {
+  background-color: rgb(49, 34, 66);
+  font-size: 65%;
+}
